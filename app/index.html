@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="An admin panel">
+    <meta name="author" content="Custom Project">
+
+    <title>Custom Project - Admin Panel</title>
+
+    <!-- vendor css -->
+    <link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="../lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+    <link href="../lib/rickshaw/rickshaw.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../css/material-palette.min.css">
+
+    <!-- Starlight CSS -->
+    <link rel="stylesheet" href="../css/starlight.css">
+
+    <style>
+      .sl-logo > a i {
+         color: #ffa726 !important;
+         margin-right: 2px;
+      }
+      .sl-menu-link.active {
+        background-color: #ffa726;
+        border-color: #f57c00;
+        color: #fff;
+      }
+      .user-profile-nav a:hover {
+        color: #ffa726;
+        transition: all 0.2s ease-in-out;
+      }
+      a.nav-link-profile:hover {
+        color: #ffa726 !important;
+        transition: all 0.2s ease-in-out;
+      }
+      table tbody tr td {
+        vertical-align: middle !important;
+      }
+      table.table.table-white tbody tr:hover {
+        cursor: pointer;
+        background: #000 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ########## START: LEFT PANEL ########## -->
+    <div class="sl-logo"><a href="" class="font-weight-normal"><i class="zmdi zmdi-sun mdc-text-grey-500"></i> Sunray Pros</a></div>
+    <div class="sl-sideleft">
+      <div class="input-group input-group-search">
+        <input type="search" name="search" class="form-control" placeholder="Search">
+        <span class="input-group-btn">
+          <button class="btn"><i class="fa fa-search"></i></button>
+        </span><!-- input-group-btn -->
+      </div><!-- input-group -->
+
+      <label class="sidebar-label">Navigation</label>
+      <div class="sl-sideleft-menu">
+        <a href="#" class="sl-menu-link active">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon zmdi zmdi-view-dashboard tx-22"></i>
+            <span class="menu-item-label">Dashboard</span>
+          </div><!-- menu-item -->
+        </a><!-- sl-menu-link -->
+        <a href="#" class="sl-menu-link">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon zmdi zmdi-globe-alt tx-20"></i>
+            <span class="menu-item-label">Campaigns</span>
+          </div><!-- menu-item -->
+        </a><!-- sl-menu-link -->
+        <a href="#" class="sl-menu-link">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon zmdi zmdi-assignment tx-20"></i>
+            <span class="menu-item-label">Proposals</span>
+          </div><!-- menu-item -->
+        </a><!-- sl-menu-link -->
+        <a href="#" class="sl-menu-link">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon zmdi zmdi-city tx-20"></i>
+            <span class="menu-item-label">Companies</span>
+          </div><!-- menu-item -->
+        </a><!-- sl-menu-link -->
+        <a href="#" class="sl-menu-link">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon zmdi zmdi-widgets tx-20"></i>
+            <span class="menu-item-label">Services</span>
+          </div><!-- menu-item -->
+        </a><!-- sl-menu-link -->
+        <a href="#" class="sl-menu-link">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon icon zmdi zmdi-settings tx-20"></i>
+            <span class="menu-item-label">Others, etc etc</span>
+          </div><!-- menu-item -->
+        </a><!-- sl-menu-link -->
+
+      </div><!-- sl-sideleft-menu -->
+    </div><!-- sl-sideleft -->
+    <!-- ########## END: LEFT PANEL ########## -->
+
+    <!-- ########## START: HEAD PANEL ########## -->
+    <div class="sl-header">
+      <div class="sl-header-left">
+        <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div>
+        <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href=""><i class="icon ion-navicon-round"></i></a></div>
+      </div><!-- sl-header-left -->
+      <div class="sl-header-right">
+        <nav class="nav">
+          <div class="dropdown">
+            <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
+              <span class="logged-name">Jane<span class="hidden-md-down"> Doe</span></span>
+              <img src="../img/img3.jpg" class="wd-32 rounded-circle" alt="">
+            </a>
+            <div class="dropdown-menu dropdown-menu-header wd-200">
+              <ul class="list-unstyled user-profile-nav">
+                <li><a href=""><i class="icon ion-ios-person-outline"></i> Edit Profile</a></li>
+                <li><a href=""><i class="icon ion-ios-gear-outline"></i> Settings</a></li>
+                <li><a href=""><i class="icon ion-power"></i> Sign Out</a></li>
+              </ul>
+            </div><!-- dropdown-menu -->
+          </div><!-- dropdown -->
+        </nav>
+      </div><!-- sl-header-right -->
+    </div><!-- sl-header -->
+    <!-- ########## END: HEAD PANEL ########## -->
+
+    <!-- ########## START: MAIN PANEL ########## -->
+    <div class="sl-mainpanel">
+      <div class="sl-pagebody">
+
+        <div class="row row-sm">
+          <div class="col-sm-6 col-xl-3">
+            <div class="card pd-20 bg-sl-primary">
+              <div class="d-flex justify-content-between align-items-center mg-b-10">
+                <h6 class="tx-11 tx-uppercase mg-b-0 tx-spacing-1 tx-white">
+                  Digital Marketing Projects
+                </h6>
+                <a href="" class="tx-white-8 hover-white"><i class="icon ion-android-more-horizontal"></i></a>
+              </div><!-- card-header -->
+              <div class="d-flex align-items-center justify-content-between">
+                <h4><i class="zmdi zmdi-share zmdi-hc-2x mdc-text-orange-400"></i></h4>
+                <h3 class="mg-b-0 tx-white tx-lato tx-bold">3,458</h3>
+              </div><!-- card-body -->
+              <div class="d-flex align-items-center justify-content-between mg-t-15 bd-t bd-white-2 pd-t-10">
+                <div>
+                  <span class="tx-11 tx-white-6">Proposals</span>
+                  <h6 class="tx-white mg-b-0">2,210</h6>
+                </div>
+                <div>
+                  <span class="tx-11 tx-white-6">Campaigns</span>
+                  <h6 class="tx-white mg-b-0">320</h6>
+                </div>
+              </div><!-- -->
+            </div><!-- card -->
+          </div><!-- col-3 -->
+          <div class="col-sm-6 col-xl-3 mg-t-20 mg-sm-t-0">
+            <div class="card pd-20 bg-sl-primary">
+              <div class="d-flex justify-content-between align-items-center mg-b-10">
+                <h6 class="tx-11 tx-uppercase mg-b-0 tx-spacing-1 tx-white">Web Design &amp; Development</h6>
+                <a href="" class="tx-white-8 hover-white"><i class="icon ion-android-more-horizontal"></i></a>
+              </div><!-- card-header -->
+              <div class="d-flex align-items-center justify-content-between">
+                <h4><i class="zmdi zmdi-shape zmdi-hc-2x mdc-text-orange-400"></i></h4>
+                <h3 class="mg-b-0 tx-white tx-lato tx-bold">1,239</h3>
+              </div><!-- card-body -->
+              <div class="d-flex align-items-center justify-content-between mg-t-15 bd-t bd-white-2 pd-t-10">
+                <div>
+                  <span class="tx-11 tx-white-6">Pending</span>
+                  <h6 class="tx-white mg-b-0">210</h6>
+                </div>
+                <div>
+                  <span class="tx-11 tx-white-6">Completed</span>
+                  <h6 class="tx-white mg-b-0">2745</h6>
+                </div>
+              </div><!-- -->
+            </div><!-- card -->
+          </div><!-- col-3 -->
+          <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
+            <div class="card pd-20 bg-sl-primary">
+              <div class="d-flex justify-content-between align-items-center mg-b-10">
+                <h6 class="tx-11 tx-uppercase mg-b-0 tx-spacing-1 tx-white">IT Solutions Projects</h6>
+                <a href="" class="tx-white-8 hover-white"><i class="icon ion-android-more-horizontal"></i></a>
+              </div><!-- card-header -->
+              <div class="d-flex align-items-center justify-content-between">
+                <h4><i class="zmdi zmdi-keyboard zmdi-hc-2x mdc-text-orange-400"></i></h4>
+                <h3 class="mg-b-0 tx-white tx-lato tx-bold">1,239</h3>
+              </div><!-- card-body -->
+              <div class="d-flex align-items-center justify-content-between mg-t-15 bd-t bd-white-2 pd-t-10">
+                <div>
+                  <span class="tx-11 tx-white-6">Pending</span>
+                  <h6 class="tx-white mg-b-0">210</h6>
+                </div>
+                <div>
+                  <span class="tx-11 tx-white-6">Completed</span>
+                  <h6 class="tx-white mg-b-0">1,864</h6>
+                </div>
+              </div><!-- -->
+            </div><!-- card -->
+          </div><!-- col-3 -->
+          <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
+            <div class="card pd-20 bg-sl-primary">
+              <div class="d-flex justify-content-between align-items-center mg-b-10">
+                <h6 class="tx-11 tx-uppercase mg-b-0 tx-spacing-1 tx-white">Virtual Staff Clients</h6>
+                <a href="" class="tx-white-8 hover-white"><i class="icon ion-android-more-horizontal"></i></a>
+              </div><!-- card-header -->
+              <div class="d-flex align-items-center justify-content-between">
+                <h4><i class="zmdi zmdi-accounts zmdi-hc-2x mdc-text-orange-400"></i></h4>
+                <h3 class="mg-b-0 tx-white tx-lato tx-bold">1,239</h3>
+              </div><!-- card-body -->
+              <div class="d-flex align-items-center justify-content-between mg-t-15 bd-t bd-white-2 pd-t-10">
+                <div>
+                  <span class="tx-11 tx-white-6">Active Clients</span>
+                  <h6 class="tx-white mg-b-0">2,210</h6>
+                </div>
+                <div>
+                  <span class="tx-11 tx-white-6">Virtual Staff</span>
+                  <h6 class="tx-white mg-b-0">235</h6>
+                </div>
+              </div><!-- -->
+            </div><!-- card -->
+          </div><!-- col-3 -->
+        </div><!-- row -->
+
+        <div class="row row-sm mg-t-20">
+          <div class="col-xl-9">
+            <div class="card overflow-hidden">
+              <div class="card-header bg-transparent pd-y-20 d-sm-flex align-items-center justify-content-between">
+                <div class="mg-b-20 mg-sm-b-0">
+                  <h6 class="card-title mg-b-5 tx-13 tx-uppercase tx-bold tx-spacing-1">Website Statistics</h6>
+                  <span class="d-block tx-12">January 01, 2018</span>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <a href="#" class="btn btn-dark mdc-text-orange-300 tx-12">
+                    sunraypros.com
+                    <i class="zmdi zmdi-open-in-new ml-2"></i>
+                  </a>
+                </div>
+              </div><!-- card-header -->
+              <div class="card-body pd-0 bd-color-gray-lighter">
+                <div class="row no-gutters tx-center">
+                  <div class="col-12 col-sm-6 pd-y-20 tx-left">
+                    <p class="pd-l-20 tx-12 lh-8 mg-b-0">Note: Lorem ipsum dolor sit amet, consectetuer adipiscing elit ipsum dolor sit amet. Aenean commodo ligula elit ipsum dolor...</p>
+                  </div><!-- col-4 -->
+                  <div class="col-6 col-sm-2 pd-y-20">
+                    <h4 class="tx-inverse tx-lato tx-bold mg-b-5">1</h4>
+                    <p class="tx-11 mg-b-0 tx-uppercase">Avg Google Rank</p>
+                  </div><!-- col-2 -->
+                  <div class="col-6 col-sm-2 pd-y-20 bd-l">
+                    <h4 class="tx-inverse tx-lato tx-bold mg-b-5">6,112</h4>
+                    <p class="tx-11 mg-b-0 tx-uppercase">Total Views</p>
+                  </div><!-- col-2 -->
+                  <div class="col-6 col-sm-2 pd-y-20 bd-l">
+                    <h4 class="tx-inverse tx-lato tx-bold mg-b-5">320</h4>
+                    <p class="tx-11 mg-b-0 tx-uppercase">Monthly Views</p>
+                  </div><!-- col-2 -->
+                </div><!-- row -->
+              </div><!-- card-body -->
+              <div class="card-body pd-0">
+                <div id="rickshaw2" class="wd-100p ht-200"></div>
+              </div><!-- card-body -->
+            </div><!-- card -->
+
+            <div class="card mg-t-20">
+              <div class="card-header bg-transparent pd-y-20 d-sm-flex align-items-center justify-content-between">
+                <div class="mg-b-20 mg-sm-b-0">
+                  <h6 class="card-title mg-b-5 tx-13 tx-uppercase tx-bold tx-spacing-1">
+                    <i class="zmdi zmdi-share mdc-text-orange-600 mr-1"></i>
+                    Digital Marketing
+                  </h6>
+                  <span class="d-block tx-12">Latest projects overview</span>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <a href="#" class="btn btn-dark mdc-text-orange-300 tx-12">
+                    View all
+                    <i class="zmdi zmdi-open-in-new ml-2"></i>
+                  </a>
+                </div>
+              </div><!-- card-header -->
+
+              <table class="table table-white table-responsive mg-b-0 tx-12">
+                <thead>
+                <tr class="tx-10">
+                  <th class="wd-10p pd-y-5 tx-center">&nbsp;</th>
+                  <th class="pd-y-5">User</th>
+                  <th class="pd-y-5">Domain</th>
+                  <th class="pd-y-5">Status</th>
+                  <th class="pd-y-5">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img1.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Mark K. Peters</a>
+                    <span class="tx-11 d-block">SEO </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">sunraypros.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Email verified
+                  </td>
+                  <td>Just Now</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img2.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Karmen F. Brown</a>
+                    <span class="tx-11 d-block">Social Media </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">thehandyman.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Pending verification
+                  </td>
+                  <td>Apr 21, 2017 8:34am</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img3.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Gorgonio Magalpok</a>
+                    <span class="tx-11 d-block">PPC Mgmt </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">clickerthis.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Purchased success
+                  </td>
+                  <td>Apr 10, 2017 4:40pm</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img5.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Ariel T. Hall</a>
+                    <span class="tx-11 d-block">SEO </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">siteoptimize.biz</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Payment on hold
+                  </td>
+                  <td>Apr 02, 2017 6:45pm</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img4.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">John L. Goulette</a>
+                    <span class="tx-11 d-block">Social Media </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">personalbloggers.org <i class="zmdi zmdi-link ml-1"></i></a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-pink mg-r-5 rounded-circle"></span> Account deactivated
+                  </td>
+                  <td>Mar 30, 2017 10:30am</td>
+                </tr>
+                </tbody>
+              </table>
+
+              <div class="card-footer tx-12 pd-y-15 bg-transparent bd-t bd-gray-200">
+                <a href=""><i class="fa fa-angle-down mg-r-5"></i>View All Assignees</a>
+              </div><!-- card-footer -->
+
+            </div><!-- card -->
+
+            <div class="card mg-t-20">
+              <div class="card-header bg-transparent pd-y-20 d-sm-flex align-items-center justify-content-between">
+                <div class="mg-b-20 mg-sm-b-0">
+                  <h6 class="card-title mg-b-5 tx-13 tx-uppercase tx-bold tx-spacing-1">
+                    <i class="zmdi zmdi-shape mdc-text-orange-600"></i>
+                    Web Design and Development
+                  </h6>
+                  <span class="d-block tx-12">Latest projects overview</span>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <a href="#" class="btn btn-dark mdc-text-orange-300 tx-12">
+                    View all
+                    <i class="zmdi zmdi-open-in-new ml-2"></i>
+                  </a>
+                </div>
+              </div><!-- card-header -->
+
+              <table class="table table-white table-responsive mg-b-0 tx-12">
+                <thead>
+                <tr class="tx-10">
+                  <th class="wd-10p pd-y-5 tx-center">&nbsp;</th>
+                  <th class="pd-y-5">User</th>
+                  <th class="pd-y-5">Domain</th>
+                  <th class="pd-y-5">Status</th>
+                  <th class="pd-y-5">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img1.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Mark K. Peters</a>
+                    <span class="tx-11 d-block">SEO </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">sunraypros.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Email verified
+                  </td>
+                  <td>Just Now</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img2.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Karmen F. Brown</a>
+                    <span class="tx-11 d-block">Social Media </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">thehandyman.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Pending verification
+                  </td>
+                  <td>Apr 21, 2017 8:34am</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img3.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Gorgonio Magalpok</a>
+                    <span class="tx-11 d-block">PPC Mgmt </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">clickerthis.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Purchased success
+                  </td>
+                  <td>Apr 10, 2017 4:40pm</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img5.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Ariel T. Hall</a>
+                    <span class="tx-11 d-block">SEO </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">siteoptimize.biz</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Payment on hold
+                  </td>
+                  <td>Apr 02, 2017 6:45pm</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img4.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">John L. Goulette</a>
+                    <span class="tx-11 d-block">Social Media </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">personalbloggers.org <i class="zmdi zmdi-link ml-1"></i></a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-pink mg-r-5 rounded-circle"></span> Account deactivated
+                  </td>
+                  <td>Mar 30, 2017 10:30am</td>
+                </tr>
+                </tbody>
+              </table>
+
+              <div class="card-footer tx-12 pd-y-15 bg-transparent bd-t bd-gray-200">
+                <a href=""><i class="fa fa-angle-down mg-r-5"></i>View All Assignees</a>
+              </div><!-- card-footer -->
+
+            </div><!-- card -->
+
+            <div class="card mg-t-20">
+              <div class="card-header bg-transparent pd-y-20 d-sm-flex align-items-center justify-content-between">
+                <div class="mg-b-20 mg-sm-b-0">
+                  <h6 class="card-title mg-b-5 tx-13 tx-uppercase tx-bold tx-spacing-1">
+                    <i class="zmdi zmdi-keyboard mdc-text-orange-600"></i>
+                    IT Solutions
+                  </h6>
+                  <span class="d-block tx-12">Latest projects overview</span>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <a href="#" class="btn btn-dark mdc-text-orange-300 tx-12">
+                    View all
+                    <i class="zmdi zmdi-open-in-new ml-2"></i>
+                  </a>
+                </div>
+              </div><!-- card-header -->
+
+              <table class="table table-white table-responsive mg-b-0 tx-12">
+                <thead>
+                <tr class="tx-10">
+                  <th class="wd-10p pd-y-5 tx-center">&nbsp;</th>
+                  <th class="pd-y-5">User</th>
+                  <th class="pd-y-5">Domain</th>
+                  <th class="pd-y-5">Status</th>
+                  <th class="pd-y-5">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img1.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Mark K. Peters</a>
+                    <span class="tx-11 d-block">SEO </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">sunraypros.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Email verified
+                  </td>
+                  <td>Just Now</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img2.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Karmen F. Brown</a>
+                    <span class="tx-11 d-block">Social Media </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">thehandyman.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Pending verification
+                  </td>
+                  <td>Apr 21, 2017 8:34am</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img3.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Gorgonio Magalpok</a>
+                    <span class="tx-11 d-block">PPC Mgmt </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">clickerthis.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Purchased success
+                  </td>
+                  <td>Apr 10, 2017 4:40pm</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img5.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Ariel T. Hall</a>
+                    <span class="tx-11 d-block">SEO </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">siteoptimize.biz</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Payment on hold
+                  </td>
+                  <td>Apr 02, 2017 6:45pm</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img4.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">John L. Goulette</a>
+                    <span class="tx-11 d-block">Social Media </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">personalbloggers.org <i class="zmdi zmdi-link ml-1"></i></a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-pink mg-r-5 rounded-circle"></span> Account deactivated
+                  </td>
+                  <td>Mar 30, 2017 10:30am</td>
+                </tr>
+                </tbody>
+              </table>
+
+              <div class="card-footer tx-12 pd-y-15 bg-transparent bd-t bd-gray-200">
+                <a href=""><i class="fa fa-angle-down mg-r-5"></i>View All Assignees</a>
+              </div><!-- card-footer -->
+
+            </div><!-- card -->
+
+            <div class="card mg-t-20">
+              <div class="card-header bg-transparent pd-y-20 d-sm-flex align-items-center justify-content-between">
+                <div class="mg-b-20 mg-sm-b-0">
+                  <h6 class="card-title mg-b-5 tx-13 tx-uppercase tx-bold tx-spacing-1">
+                    <i class="zmdi zmdi-accounts mdc-text-orange-600"></i>
+                    Virtual Staff
+                  </h6>
+                  <span class="d-block tx-12">Latest projects overview</span>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <a href="#" class="btn btn-dark mdc-text-orange-300 tx-12">
+                    View all
+                    <i class="zmdi zmdi-open-in-new ml-2"></i>
+                  </a>
+                </div>
+              </div><!-- card-header -->
+
+              <table class="table table-white table-responsive mg-b-0 tx-12">
+                <thead>
+                <tr class="tx-10">
+                  <th class="wd-10p pd-y-5 tx-center">&nbsp;</th>
+                  <th class="pd-y-5">User</th>
+                  <th class="pd-y-5">Domain</th>
+                  <th class="pd-y-5">Status</th>
+                  <th class="pd-y-5">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img1.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Mark K. Peters</a>
+                    <span class="tx-11 d-block">SEO </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">sunraypros.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Email verified
+                  </td>
+                  <td>Just Now</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img2.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Karmen F. Brown</a>
+                    <span class="tx-11 d-block">Social Media </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">thehandyman.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Pending verification
+                  </td>
+                  <td>Apr 21, 2017 8:34am</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img3.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Gorgonio Magalpok</a>
+                    <span class="tx-11 d-block">PPC Mgmt </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">clickerthis.com</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-success mg-r-5 rounded-circle"></span> Purchased success
+                  </td>
+                  <td>Apr 10, 2017 4:40pm</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img5.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">Ariel T. Hall</a>
+                    <span class="tx-11 d-block">SEO </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">siteoptimize.biz</a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-warning mg-r-5 rounded-circle"></span> Payment on hold
+                  </td>
+                  <td>Apr 02, 2017 6:45pm</td>
+                </tr>
+                <tr>
+                  <td class="pd-l-20 tx-center">
+                    <img src="../img/img4.jpg" class="wd-36 rounded-circle" alt="Image">
+                  </td>
+                  <td>
+                    <a href="" class="tx-inverse tx-14 tx-medium d-block">John L. Goulette</a>
+                    <span class="tx-11 d-block">Social Media </span>
+                  </td>
+                  <td>
+                    <a href="#" class="mdc-text-blue-grey-500">personalbloggers.org <i class="zmdi zmdi-link ml-1"></i></a>
+                  </td>
+                  <td class="tx-12">
+                    <span class="square-8 bg-pink mg-r-5 rounded-circle"></span> Account deactivated
+                  </td>
+                  <td>Mar 30, 2017 10:30am</td>
+                </tr>
+                </tbody>
+              </table>
+
+              <div class="card-footer tx-12 pd-y-15 bg-transparent bd-t bd-gray-200">
+                <a href=""><i class="fa fa-angle-down mg-r-5"></i>View All Assignees</a>
+              </div><!-- card-footer -->
+
+            </div><!-- card -->
+
+          </div><!-- col-8 -->
+          <div class="col-xl-3 mg-t-20 mg-xl-t-0">
+            <div class="card widget-messages">
+              <div class="card-header">
+                <span>Announcements</span>
+                <a href=""><i class="icon ion-more"></i></a>
+              </div><!-- card-header -->
+              <div class="list-group list-group-flush">
+                <a href="" class="list-group-item list-group-item-action media">
+                  <img src="../img/img10.jpg" alt="">
+                  <div class="media-body">
+                    <div class="msg-top">
+                      <span>Mienard B. Lumaad</span>
+                      <span>4:09am</span>
+                    </div>
+                    <p class="msg-summary">Many desktop publishing packages and web page editors now use...</p>
+                  </div><!-- media-body -->
+                </a><!-- list-group-item -->
+                <a href="" class="list-group-item list-group-item-action media">
+                  <img src="../img/img9.jpg" alt="">
+                  <div class="media-body">
+                    <div class="msg-top">
+                      <span>Isidore Dilao</span>
+                      <span>Yesterday 3:00am</span>
+                    </div>
+                    <p class="msg-summary">On the other hand, we denounce with righteous indignation and dislike...</p>
+                  </div><!-- media-body -->
+                </a><!-- list-group-item -->
+                <a href="" class="list-group-item list-group-item-action media">
+                  <img src="../img/img8.jpg" alt="">
+                  <div class="media-body">
+                    <div class="msg-top">
+                      <span>Kirby Avendula</span>
+                      <span>Yesterday 3:00am</span>
+                    </div>
+                    <p class="msg-summary">It is a long established fact that a reader will be distracted by the readable...</p>
+                  </div><!-- media-body -->
+                </a><!-- list-group-item -->
+                <a href="" class="list-group-item list-group-item-action media">
+                  <img src="../img/img7.jpg" alt="">
+                  <div class="media-body">
+                    <div class="msg-top">
+                      <span>Roven Galeon</span>
+                      <span>Yesterday 3:00am</span>
+                    </div>
+                    <p class="msg-summary">Than the fact that climate change may be causing it to rapidly disappear... </p>
+                  </div><!-- media-body -->
+                </a><!-- list-group-item -->
+              </div><!-- list-group -->
+              <div class="card-footer">
+                <a href="" class="tx-12"><i class="fa fa-angle-down mg-r-3"></i> Load more announcements</a>
+              </div><!-- card-footer -->
+            </div><!-- card -->
+          </div><!-- col-3 -->
+        </div><!-- row -->
+
+      </div><!-- sl-pagebody -->
+      <footer class="sl-footer">
+        <div class="footer-left">
+          <div class="mg-b-2">Copyright &copy; 2017. Custom Project. All Rights Reserved.</div>
+        </div>
+        <div class="footer-right d-flex align-items-center">
+          <a target="_blank" class="pd-x-5" href="#">Dashboard</a>
+          <a target="_blank" class="pd-x-5" href="#">Campaigns</a>
+          <a target="_blank" class="pd-x-5" href="#">Companies</a>
+          <a target="_blank" class="pd-x-5" href="#">Services</a>
+          <a target="_blank" class="pd-x-5" href="#">Etc</a>
+        </div>
+      </footer>
+    </div><!-- sl-mainpanel -->
+    <!-- ########## END: MAIN PANEL ########## -->
+
+    <script src="../lib/jquery/jquery.js"></script>
+    <script src="../lib/popper.js/popper.js"></script>
+    <script src="../lib/bootstrap/bootstrap.js"></script>
+    <script src="../lib/jquery-ui/jquery-ui.js"></script>
+    <script src="../lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+    <script src="../lib/jquery.sparkline.bower/jquery.sparkline.min.js"></script>
+    <script src="../lib/d3/d3.js"></script>
+    <script src="../lib/rickshaw/rickshaw.min.js"></script>
+    <script src="../lib/chart.js/Chart.js"></script>
+    <script src="../lib/Flot/jquery.flot.js"></script>
+    <script src="../lib/Flot/jquery.flot.pie.js"></script>
+    <script src="../lib/Flot/jquery.flot.resize.js"></script>
+    <script src="../lib/flot-spline/jquery.flot.spline.js"></script>
+
+    <script src="../js/starlight.js"></script>
+    <script src="../js/ResizeSensor.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>
